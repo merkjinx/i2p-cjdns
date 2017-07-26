@@ -196,7 +196,7 @@ public abstract class TransportUtil {
                 // disallow fc00::/8 and fd00::/8 (Unique local addresses RFC 4193)
                 // not recognized as local by InetAddress
                 if ((addr[0] & 0xfe) == 0xfc)
-                    return false;
+                    return true;
                 // Hamachi IPv6
                 if (addr[0] == 0x26 && addr[1] == 0x20 && addr[2] == 0x00 && (addr[3] & 0xff) == 0x9b)
                     return false;
